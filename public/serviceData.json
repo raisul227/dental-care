@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "img": "https://i.ibb.co/mbj1zBd/jonathan-borba-W9-YEY6-G8-LVM-unsplash.jpg",
+        "name": "Tooth Protection",
+        "details": "There are only 2 dental specialties that only focus on dental esthetics: Prosthodontics and Orthodontics"
+    },
+    {
+        "id": 2,
+        "img": "https://i.ibb.co/dGCB4z8/quang-tri-nguyen-Dn3-Rx-Yx-Xcwk-unsplash.jpg",
+        "name": "Dental Implants",
+        "details": "The implant fixture is first placed, so that it is likely to osseointegrate, then a dental prosthetic is added"
+    },
+    {
+        "id": 3,
+        "img": "https://i.ibb.co/VH3tdcf/yusuf-belek-g-Hd-VUGAJYGo-unsplash.jpg",
+        "name": "Dental Care",
+        "details": "We provide a wide range of oral health care services to patients, from routine checkups to fitting braces"
+    },
+    {
+        "id": 4,
+        "img": "https://i.ibb.co/D1qvgj6/lesly-juarez-1-Ah-GNGKuh-R0-unsplash.jpg",
+        "name": "Teeth Whitening",
+        "details": "Bleaching methods use carbamide peroxide which reacts with water to form hydrogen peroxide loremis"
+    },
+    {
+        "id": 5,
+        "img": "https://i.ibb.co/p3dLRng/diana-polekhina-fm-B7-Id-Fjh-TM-unsplash.jpg",
+        "name": "Dental Calculus",
+        "details": "Types of bridges may vary, depending upon how they are fabricated and the way they anchor to the adjacent teeth"
+    },
+    {
+        "id": 6,
+        "img": "https://i.ibb.co/J5pXXxj/enis-yavuz-4u2f-G9mq-Gv-Q-unsplash.jpg",
+        "name": "Prevention",
+        "details": "The most important part of preventive dentistry is to brush teeth with fluoride toothpaste approved by ADA"
+    }
+]
