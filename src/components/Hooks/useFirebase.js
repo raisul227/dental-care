@@ -10,6 +10,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const [isLoading, setIsLoading] = useState(true)
     const handleEmail = (e) => {
         setEmail(e.target.value);
     }
@@ -56,6 +57,7 @@ const useFirebase = () => {
 
     }
     const logOut = () => {
+        setIsLoading(true)
         signOut(auth)
             .then(() => {
                 setUser({})
@@ -64,19 +66,27 @@ const useFirebase = () => {
             .catch(error => {
                 setError(error.message)
             })
+            .finally(() => setIsLoading(false))
     }
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user)
                 // setName(user)
+            } else {
+                setUser({})
             }
-        })
+            setIsLoading(false)
+
+        });
+        return unsubscribed;
     }, [])
     return {
         user,
         error,
         setError,
+        isLoading,
+        setIsLoading,
         handleEmail,
         handleName,
         handlePassword,

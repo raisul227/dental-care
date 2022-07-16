@@ -1,0 +1,15 @@
+.error-img {
+    width: 800px;
+}
+
+@media screen and (max-width:468px) {
+    .error-img {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .error-img {
+        width: 500px;
+    }
+}

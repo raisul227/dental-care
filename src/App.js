@@ -12,6 +12,7 @@ import Login from './components/Login/Login';
 import AuthProvider from './context/AuthProvider';
 import Appointment from './components/Appointment/Appointment';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import NotFound from './components/NotFound/NotFound';
 function App() {
   return (
     <div className="App">
@@ -34,6 +35,9 @@ function App() {
             <PrivateRoute path='/appointment/:dataId'>
               <Appointment></Appointment>
             </PrivateRoute>
+            <Route path='*'>
+              <NotFound></NotFound>
+            </Route>
           </Switch>
           <Footer></Footer>
         </BrowserRouter>

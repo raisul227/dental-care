@@ -3,13 +3,15 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import googleLogo from '../../img/google-logo-9827.png';
 import useAuth from './../Hooks/useAuth';
+import './Login.css';
 
 const Login = () => {
-    const { handleEmail, handlePassword, error, handleLogin, googleSignIn, setError } = useAuth();
+    const { handleEmail, handlePassword, error, handleLogin, googleSignIn, setError, setIsLoading } = useAuth();
     const location = useLocation();
     const history = useHistory();
     const redirect__url = location.state?.from || "/home";
     const handleGoogleLogin = () => {
+        setIsLoading(true)
         googleSignIn()
             .then(result => {
                 history.push(redirect__url);
@@ -18,10 +20,11 @@ const Login = () => {
             .catch(error => {
                 setError(error.message)
             })
+            .finally(() => setIsLoading(false))
     }
     const handleEmailLogin = (event) => {
-        console.log("submitted by email");
         event.preventDefault()
+        setIsLoading(true)
         handleLogin()
             .then(result => {
                 history.push(redirect__url);
@@ -30,6 +33,7 @@ const Login = () => {
             .catch(error => {
                 setError(error.message);
             })
+            .finally(() => setIsLoading(false))
     }
 
     return (

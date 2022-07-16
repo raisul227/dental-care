@@ -1,10 +1,18 @@
 
 import React from 'react';
+import { Spinner } from 'react-bootstrap';
 import { Redirect, Route } from 'react-router-dom';
 import useAuth from './../Hooks/useAuth';
 
 const PrivateRoute = ({ children, ...rest }) => {
-    const { user } = useAuth();
+    const { user, isLoading } = useAuth();
+    if (isLoading) {
+        return (
+            <div className='h-100 d-flex justify-content-center align-items-center'>
+                <Spinner animation="border" variant="danger" />
+            </div>
+        )
+    }
     return (
         <Route
             {...rest}
